@@ -17,7 +17,7 @@ class Monstro:
         self.largura = largura
         self.altura = altura
         
-        # Carregar a imagem
+        # Carrega a imagem
         caminho_base = os.path.dirname(os.path.abspath(__file__))
         # O caminho_imagem deve ser relativo à pasta 'main' se 'monstro.py' estiver lá
         # Ex: "../res/sprites/goblin.png"

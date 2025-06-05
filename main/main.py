@@ -5,7 +5,7 @@ from jogo import tela_jogo
 
 pygame.init()
 
-# 🎵 Música de fundo (carrega com caminho seguro)
+# Música de fundo
 pygame.mixer.init()
 
 # Caminho absoluto da música
@@ -13,10 +13,10 @@ caminho_base = os.path.dirname(os.path.abspath(__file__))
 caminho_musica = os.path.join(caminho_base, "..", "res", "musica", "trilha.ogg")
 
 pygame.mixer.music.load(caminho_musica)
-pygame.mixer.music.play(-1)  # Loop infinito
+pygame.mixer.music.play(-1) 
 
 # Controle de volume
-volume = 0.5  # 50%
+volume = 0.5 
 mutado = False
 pygame.mixer.music.set_volume(volume)
 
@@ -63,7 +63,7 @@ def desenhar_menu(pos_mouse):
         tela.blit(texto, rect)
         botoes.append((opcao, rect))
 
-    # --- CONTROLE DE SOM ---
+    # Controle de som
     botoes_som = []
 
     # Volume %

@@ -1,17 +1,14 @@
 import pygame
 import sys
-from monstros import Monstro # Adicione esta linha!
-
-# O restante do seu arquivo jogo.py continua aqui:
+from monstros import Monstro
 
 def tela_jogo(tela, largura, altura, fonte_titulo):
     rodando_jogo = True
 
-    # Agora você pode criar instâncias de Monstro normalmente:
-    monstro_exemplo = Monstro("Goblin", 80, 10, 3, 20, 10, largura - 250, altura // 2 - 75, 150, 150, "../res/sprites/agua_viva.png")
+    monstro_exemplo = Monstro("Goblin", 80, 10, 3, 20, 10, largura // 2, altura // 4, 640, 640, "../res/sprites/goblin.png")
 
     while rodando_jogo:
-        tela.fill(("pink"))  # Cor de fundo da tela do jogo
+        tela.fill(("pink"))  
 
         if monstro_exemplo.esta_vivo():
             monstro_exemplo.desenhar(tela)
@@ -28,7 +25,7 @@ def tela_jogo(tela, largura, altura, fonte_titulo):
                 sys.exit()
             elif evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_ESCAPE:
-                    rodando_jogo = False  # Volta para o menu
+                    rodando_jogo = False 
                 elif evento.key == pygame.K_SPACE:
                     if monstro_exemplo.esta_vivo():
                         monstro_exemplo.receber_dano(20)
